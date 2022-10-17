@@ -23,40 +23,15 @@ class ProfileDialogFragment : DialogFragment(R.layout.fragment_profile_dialog){
         builder.setTitle(title)
         val binding= FragmentProfileDialogBinding.inflate(layoutInflater)
         builder.setView(binding.root)
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ ->
-//            if (!binding.inputCounter.text.isNullOrBlank()){
-//                textValue=Integer.valueOf(binding.inputCounter.text.toString())
-//            }
-//            if (check(binding)){
-//                onButtonClicked(counter+textValue)
-//            }
+        builder.setPositiveButton("OK") { _, _ ->
             plus?.invoke(Integer.valueOf(binding.inputCounter.text.toString()))
-        })
+        }
         builder.setNegativeButton("Cancel"
         ) { dialog, _ -> dialog.dismiss() }
         builder.setNeutralButton("Neutrial"
         ) { _, _ ->
-//            if (!binding.inputCounter.text.isNullOrBlank()) {
-//                textValue = Integer.valueOf(binding.inputCounter.text.toString())
-//            }
-//            if (check(binding)) {
-//                onButtonClicked(counter - textValue)
-//            }
                 minus?.invoke(Integer.valueOf(binding.inputCounter.text.toString()))
         }
         return builder.create()
     }
-
-//    private fun check(binding:FragmentProfileDialogBinding):Boolean{
-//        if (!binding.inputCounter.text.isNullOrBlank()){
-//            textValue=Integer.valueOf(binding.inputCounter.text.toString())
-//            if(!(textValue in 0..100)){
-//                binding.inputLayout.error="The value should range from 0 to 100"
-//                return false}
-//            else{
-//                binding.inputLayout.isErrorEnabled=false
-//            }
-//        }
-//        return true
-//    }
 }
