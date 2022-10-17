@@ -7,13 +7,14 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.MediaStore
 import android.view.View
+import android.widget.Button
 import com.example.android_itis_2022.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
     fun addEvent(title: String, location: String) {
         val intent = Intent(Intent.ACTION_INSERT).apply {
             data = CalendarContract.Events.CONTENT_URI
