@@ -23,9 +23,8 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding=FragmentProfileBinding.bind(view)
-        //binding?.counter?.text=count.toString()
         binding?.run {
-            binding?.button1?.setOnClickListener{
+            button1.setOnClickListener{
                 parentFragmentManager.beginTransaction()
                     .setCustomAnimations(
                         android.R.anim.fade_in,
@@ -33,13 +32,25 @@ class ProfileFragment : Fragment() {
                         android.R.anim.fade_in,
                         android.R.anim.fade_out
                     )
-                    .replace(R.id.container, ProfileFragment2.getInstance(arguments),ProfileFragment2.ProfileFragment2_TAG)
+                    .replace(ValueCounter.conID, ProfileSecondFragment.getInstance(arguments),ProfileSecondFragment.ProfileFragment2_TAG)
                     .addToBackStack(null)
                     .commit()
             }
-            binding?.button2?.setOnClickListener{
+            button2.setOnClickListener{
                 count += 1
-                binding?.counter?.text=count.toString()
+                binding?.counter?.text= "counterValue: $count"
+            }
+            buttonOpenDialogFragment.setOnClickListener{
+                val dialog=ProfileDialogFragment()
+                dialog.show(requireActivity().supportFragmentManager,"Dialog")
+                dialog.plus={
+                        dialValue:Int->count+=dialValue
+                        binding?.counter?.text= "$count"
+                }
+                dialog.minus={
+                        dialValue:Int->count-=dialValue
+                        binding?.counter?.text= "$count"
+                }
             }
         }
     }

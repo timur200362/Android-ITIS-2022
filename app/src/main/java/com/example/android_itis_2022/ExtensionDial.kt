@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 typealias  Click=()->Unit
 
 fun Fragment.showDialog(
-    title:String="",
+    title:String="Dialog",
     positiveAction:Click={},
     negativeAction:Click={},
     neutralAction:Click={},
 ){
     AlertDialog.Builder(requireContext())
-        .setTitle("Title")
+        .setTitle(title)
         .setPositiveButton("Increase"){dialog, _ ->
             positiveAction()
             dialog.dismiss()
