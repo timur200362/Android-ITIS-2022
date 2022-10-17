@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
-        binding?.run {
+        binding?.run{
             button.setOnClickListener{
                 addEvent("Birthday","Home");
             }
