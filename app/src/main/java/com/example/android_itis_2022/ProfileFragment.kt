@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
                         android.R.anim.fade_in,
                         android.R.anim.fade_out
                     )
-                    .replace(ValueCounter.conID, ProfileSecondFragment.getInstance(arguments),ProfileSecondFragment.ProfileFragment2_TAG)
+                    .replace(R.id.container, ProfileSecondFragment.getInstance(counter.text.toString()),ProfileSecondFragment.ProfileFragment2_TAG)
                     .addToBackStack(null)
                     .commit()
             }
@@ -45,11 +45,26 @@ class ProfileFragment : Fragment() {
                 dialog.show(requireActivity().supportFragmentManager,"Dialog")
                 dialog.plus={
                         dialValue:Int->count+=dialValue
-                        binding?.counter?.text= "$count"
+                        if (dialValue>=0 && dialValue<=100){
+                            binding?.counter?.text= "$count"
+                        }
+                        else{
+                            binding?.counter?.text = "Invalid value entered"
+                        }
                 }
                 dialog.minus={
                         dialValue:Int->count-=dialValue
-                        binding?.counter?.text= "$count"
+                    if (dialValue>=0 && dialValue<=100){
+                        if (count>=0){
+                            binding?.counter?.text= "$count"
+                        }
+                        else{
+                            binding?.counter?.text = "The value cannot be negative"
+                        }
+                    }
+                    else{
+                        binding?.counter?.text = "Invalid value entered"
+                    }
                 }
             }
         }
