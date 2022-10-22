@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
                         android.R.anim.fade_in,
                         android.R.anim.fade_out
                     )
-                    .replace(R.id.container, ProfileSecondFragment.getInstance(counter.text.toString()),ProfileSecondFragment.ProfileFragment2_TAG)
+                    .replace(R.id.container, ProfileSecondFragment.getInstance(counter.text.toString().toInt()),ProfileSecondFragment.ProfileFragment2_TAG)
                     .addToBackStack(null)
                     .commit()
             }
@@ -45,12 +45,7 @@ class ProfileFragment : Fragment() {
                 dialog.show(requireActivity().supportFragmentManager,"Dialog")
                 dialog.plus={
                         dialValue:Int->count+=dialValue
-                        if (dialValue>=0 && dialValue<=100){
-                            binding?.counter?.text= "$count"
-                        }
-                        else{
-                            binding?.counter?.text = "Invalid value entered"
-                        }
+                        binding?.counter?.text= "$count"
                 }
                 dialog.minus={
                         dialValue:Int->count-=dialValue

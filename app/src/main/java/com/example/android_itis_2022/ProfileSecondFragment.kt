@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.android_itis_2022.ProfileFragment.Companion.ProfileFragment_TAG
-import com.example.android_itis_2022.databinding.FragmentProfileBinding
 import com.example.android_itis_2022.databinding.FragmentProfileSecondBinding
 
 class ProfileSecondFragment : Fragment() {
@@ -24,11 +22,11 @@ class ProfileSecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val counterValue=arguments?.getString(ProfileFragment2_TAG)?:0
+        val counterValue=arguments?.getInt(ProfileFragment2_TAG)?:0
         var colorValue=0
         with(binding){
             when(counterValue){
-                in 0..50->{
+                 in 0..50->{
                     colorValue=resources.getIntArray(R.array.colors_array).get(0)
                 }
                 in 51..100->{
@@ -38,15 +36,15 @@ class ProfileSecondFragment : Fragment() {
                     colorValue=resources.getIntArray(R.array.colors_array).get(2)
                 }
             }
-            this!!.colorCounterValue?.text = "$counterValue"
+            this!!.colorCounterValue.text = "$counterValue"
             screenSecond.setBackgroundColor(colorValue)
         }
     }
     companion object {
         const val ProfileFragment2_TAG = "ProfileFragment2_TAG"
-        fun getInstance(message: String) = ProfileSecondFragment().apply {
+        fun getInstance(count: Int) = ProfileSecondFragment().apply {
             arguments=Bundle().apply {
-                putString(ProfileFragment2_TAG,message)
+                putInt(ProfileFragment2_TAG,count)
             }
         }
     }
