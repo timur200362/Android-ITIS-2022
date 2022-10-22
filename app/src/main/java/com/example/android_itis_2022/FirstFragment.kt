@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.android_itis_2022.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
@@ -21,9 +22,10 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val gameAdapter:GameAdapter= GameAdapter(GameRepository.games) {}
         binding=FragmentFirstBinding.bind(view)
         binding?.run {
-
+            team.adapter=gameAdapter
         }
     }
     companion object {
