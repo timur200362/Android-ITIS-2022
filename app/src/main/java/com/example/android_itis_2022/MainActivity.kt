@@ -8,21 +8,19 @@ import com.example.android_itis_2022.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding?=null
-    private var adapter:PlanetsAdapter?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         binding=ActivityMainBinding.inflate(layoutInflater).also{
             setContentView(it.root)
         }
+        if (savedInstanceState!=null){
+            return
+        }
         binding?.run{
-            adapter=PlanetsAdapter(PlanetsRepository.planets){
-                root.showSnackbar("You click:${it.name}")
-            }
-            rvPlanets.adapter=adapter
-            rvPlanets.layoutManager= LinearLayoutManager(this@MainActivity)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container,FirstFragment()).commit()
         }
     }
 }
