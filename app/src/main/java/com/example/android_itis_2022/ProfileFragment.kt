@@ -49,17 +49,12 @@ class ProfileFragment : Fragment() {
                 }
                 dialog.minus={
                         dialValue:Int->count-=dialValue
-                    if (dialValue>=0 && dialValue<=100){
                         if (count>=0){
                             binding?.counter?.text= "$count"
                         }
                         else{
                             binding?.counter?.text = "The value cannot be negative"
                         }
-                    }
-                    else{
-                        binding?.counter?.text = "Invalid value entered"
-                    }
                 }
             }
         }

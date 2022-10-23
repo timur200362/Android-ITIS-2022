@@ -33,7 +33,7 @@ class ProfileDialogFragment : DialogFragment(R.layout.fragment_profile_dialog){
 //            }
 //
 //            override fun afterTextChanged(s: Editable?) {
-//                if (s.toString().toInt()>100){
+//                if (s.toString().toInt()>100 && s.toString().toInt()<0){
 //                    binding.inputCounter.setError("Invalid value entered")
 //                }
 //            }
@@ -44,6 +44,7 @@ class ProfileDialogFragment : DialogFragment(R.layout.fragment_profile_dialog){
             }
             else{
                 plus?.invoke(Integer.valueOf(binding.inputCounter.text.toString()))
+
             }
         }
         builder.setNegativeButton("Cancel"
