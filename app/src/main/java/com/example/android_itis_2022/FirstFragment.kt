@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.android_itis_2022.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
     private var binding: FragmentFirstBinding? = null
+    private var adapter:GameAdapter?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,14 +22,19 @@ class FirstFragment : Fragment() {
         }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val gameAdapter:GameAdapter= GameAdapter(GameRepository.games) {}
+        //val gameAdapter:GameAdapter= GameAdapter(GameRepository.games) {}
         binding=FragmentFirstBinding.bind(view)
         binding?.run {
-            team.adapter=gameAdapter
+            adapter=GameAdapter(GameRepository.games,
+            glide = Glide.with(this@FirstFragment)){
+                root.showSnackbar(it.name)
+            }
+            team.adapter=adapter
+            }
         }
-    }
     companion object {
         const val FirstFragment_TAG = "FirstFragment_TAG"
         fun getInstance(bundle: Bundle?): FirstFragment {
