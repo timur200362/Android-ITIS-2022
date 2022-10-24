@@ -39,19 +39,18 @@ class ProfileDialogFragment : DialogFragment(R.layout.fragment_profile_dialog){
 //            }
 //        })
         builder.setPositiveButton("OK") { _, _ ->
-            if (binding.inputCounter.text.toString().toInt()>100 && binding.inputCounter.text.toString().toInt()<0){
+            if (binding.inputCounter.text.toString().toInt()>100 || binding.inputCounter.text.toString().toInt()<0){
                 binding.inputCounter.setError("Invalid value entered")
             }
             else{
                 plus?.invoke(Integer.valueOf(binding.inputCounter.text.toString()))
-
             }
         }
         builder.setNegativeButton("Cancel"
         ) { dialog, _ -> dialog.dismiss() }
         builder.setNeutralButton("Neutrial"
         ) { _, _ ->
-            if (binding.inputCounter.text.toString().toInt()>100 && binding.inputCounter.text.toString().toInt()<0){
+            if (binding.inputCounter.text.toString().toInt()>100 || binding.inputCounter.text.toString().toInt()<0){
                 binding.inputCounter.setError("Invalid value entered")
             }
             else{

@@ -24,6 +24,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
+    <TextView
+        android:id="@+id/counterValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="counterValue:"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/counter"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"

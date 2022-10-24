@@ -12,11 +12,10 @@ class MainActivity : AppCompatActivity() {
         binding=ActivityMainBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
-        if(savedInstanceState!=null){
-            return
-        }
-        binding?.run {
-            supportFragmentManager.beginTransaction().replace(R.id.container,ProfileFragment()).commit()
+        if(savedInstanceState==null){
+            binding?.run {
+                supportFragmentManager.beginTransaction().replace(R.id.container,ProfileFragment()).commit()
+            }
         }
     }
 }

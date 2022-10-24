@@ -38,7 +38,7 @@ class ProfileFragment : Fragment() {
             }
             button2.setOnClickListener{
                 count += 1
-                binding?.counter?.text= "counterValue: $count"
+                binding?.counter?.text= "$count"
             }
             buttonOpenDialogFragment.setOnClickListener{
                 val dialog=ProfileDialogFragment()
@@ -57,14 +57,6 @@ class ProfileFragment : Fragment() {
                         }
                 }
             }
-        }
-    }
-    companion object {
-        const val ProfileFragment_TAG = "ProfileFragment_TAG"
-        fun getInstance(bundle: Bundle?): ProfileFragment {
-            val firstFragment = ProfileFragment()
-            firstFragment.arguments = bundle
-            return firstFragment
         }
     }
 }
