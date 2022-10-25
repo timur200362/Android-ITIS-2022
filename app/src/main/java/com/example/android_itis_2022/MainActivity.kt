@@ -18,15 +18,15 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState!=null){
             return
         }
-//        binding?.run{
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.container,FirstFragment()).commit()
-//        }
-        supportFragmentManager.beginTransaction()
-            .replace(
-                R.id.container,
-                FirstFragment.getInstance(Bundle()),
-                FirstFragment.FirstFragment_TAG)
-            .commit()
+        binding?.run{
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container,FirstFragment()).commit()
+        }
+//        supportFragmentManager.beginTransaction()
+//            .replace(
+//                R.id.container,
+//                FirstFragment.getInstance(Bundle()),
+//                FirstFragment.FirstFragment_TAG)
+//            .commit()
     }
 }

@@ -16,6 +16,11 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+//        inflater.inflate(R.layout.fragment_first,container,false)
+//        binding=FragmentFirstBinding.inflate(inflater,container,false)
+//        return binding?.root
+
         return FragmentFirstBinding.inflate(inflater,container,false).let{
             binding=it
             it.root
@@ -30,7 +35,10 @@ class FirstFragment : Fragment() {
         binding?.run {
             adapter=GameAdapter(GameRepository.games,
             glide = Glide.with(this@FirstFragment)){
-                root.showSnackbar(it.name)
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container,SecondFragment.getInstance(it.id),SecondFragment.TAG)
+                    .addToBackStack(FirstFragment_TAG)
+                    .commit()
             }
             team.adapter=adapter
             }
