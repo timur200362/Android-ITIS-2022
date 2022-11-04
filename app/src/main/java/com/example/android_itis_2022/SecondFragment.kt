@@ -40,7 +40,9 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentSecondBinding.bind(view)
-        binding?.imageGame?.setImageURI(GameRepository.games[param!!.toInt()].cover.toUri())
+        binding?.run{
+            context?.let { Glide.with(it).load(GameRepository.games[param!!.toInt()].cover.toUri()).into(imageGame)}
+        }
         binding?.inputName?.text= GameRepository.games[param!!.toInt()].name
         binding?.inputReleaseDate?.text= GameRepository.games[param!!.toInt()].releaseDate
         binding?.inputDescription?.text= GameRepository.games[param!!.toInt()].descriptionGame
