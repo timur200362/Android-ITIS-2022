@@ -41,6 +41,22 @@ class FirstFragment : Fragment() {
                     .commit()
             }
             team.adapter=adapter
+
+            buttonAction.setOnClickListener{
+                val dialog=AddToListDialogFragment()
+                dialog.show(requireActivity().supportFragmentManager,"Dialog")
+                dialog.add={position,game->
+                    GameRepository.games.add(position,game)
+                    adapter= GameAdapter(GameRepository.games,
+                        glide = Glide.with(this@FirstFragment)){
+                        requireActivity().supportFragmentManager.beginTransaction()
+                            .replace(R.id.container,SecondFragment.getInstance(it.id),SecondFragment.TAG)
+                            .addToBackStack(FirstFragment_TAG)
+                            .commit()
+                    }
+                    team.adapter=adapter
+                }
+            }
             }
         }
     companion object {

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import com.bumptech.glide.Glide
-import com.example.android_itis_2022.databinding.FragmentFirstBinding
 import com.example.android_itis_2022.databinding.FragmentSecondBinding
 
 
@@ -40,10 +39,12 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentSecondBinding.bind(view)
-        binding?.imageGame?.setImageURI(GameRepository.games[param!!.toInt()].cover.toUri())
-        binding?.inputName?.text= GameRepository.games[param!!.toInt()].name
-        binding?.inputReleaseDate?.text= GameRepository.games[param!!.toInt()].releaseDate
-        binding?.inputDescription?.text= GameRepository.games[param!!.toInt()].descriptionGame
+        binding?.run {
+            context?.let { Glide.with(it).load(GameRepository.games[param!!.toInt()].cover.toUri()).into(imageGame) }
+            inputName.text = GameRepository.games[param!!.toInt()].name
+            inputReleaseDate.text= GameRepository.games[param!!.toInt()].releaseDate
+            inputDescription.text= GameRepository.games[param!!.toInt()].descriptionGame
+        }
     }
     companion object {
         const val TAG = "SecondFragment_TAG"
@@ -53,6 +54,5 @@ class SecondFragment : Fragment() {
                     putString(DESCRIPTION_PARAM,description)
                 }
             }
-        //dz-5
     }
 }
