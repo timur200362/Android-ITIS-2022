@@ -2,7 +2,7 @@ package com.example.android_itis_2022
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_itis_2022.Fragments.FirstFragment
 import com.example.android_itis_2022.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding?.run{
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container,FirstFragment()).commit()
+                .replace(R.id.container, FirstFragment()).commit()
         }
 //        supportFragmentManager.beginTransaction()
 //            .replace(

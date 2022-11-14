@@ -1,4 +1,4 @@
-package com.example.android_itis_2022
+package com.example.android_itis_2022.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import com.bumptech.glide.Glide
+import com.example.android_itis_2022.Model.GameRepository
 import com.example.android_itis_2022.databinding.FragmentSecondBinding
 
 
