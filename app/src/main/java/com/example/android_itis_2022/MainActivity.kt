@@ -3,12 +3,9 @@ package com.example.android_itis_2022
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.android_itis_2022.databinding.ActivityMainBinding
 
@@ -42,10 +39,5 @@ class MainActivity : AppCompatActivity() {
                 super.onBackPressed()
             }
         }
-    }
-    private fun navigateTo(fragment:Fragment){
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container,fragment,fragment.javaClass.name)
-            .commit()
     }
 }
