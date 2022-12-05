@@ -3,98 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/mainFragment2">
+    app:startDestination="@id/mainFragment">
 
     <include app:graph="@navigation/nested_graph"/>
 
     <fragment
-        android:id="@+id/mainFragment2"
+        android:id="@+id/mainFragment"
         android:name="com.example.android_itis_2022.Fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment2_to_servicesFragment2"
-            app:destination="@id/servicesFragment2" />
-        <action
-            android:id="@+id/action_mainFragment2_to_messageFragment2"
-            app:destination="@id/messageFragment2" />
-        <action
-            android:id="@+id/action_mainFragment2_to_videoFragment2"
-            app:destination="@id/videoFragment2" />
-        <action
-            android:id="@+id/action_mainFragment2_to_clipsFragment"
-            app:destination="@id/clipsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/messageFragment2"
+        android:id="@+id/messageFragment"
         android:name="com.example.android_itis_2022.Fragments.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" >
-        <action
-            android:id="@+id/action_messageFragment2_to_mainFragment2"
-            app:destination="@id/mainFragment2" />
-        <action
-            android:id="@+id/action_messageFragment2_to_servicesFragment2"
-            app:destination="@id/servicesFragment2" />
-        <action
-            android:id="@+id/action_messageFragment2_to_videoFragment2"
-            app:destination="@id/videoFragment2" />
-        <action
-            android:id="@+id/action_messageFragment2_to_clipsFragment"
-            app:destination="@id/clipsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/servicesFragment2"
+        android:id="@+id/servicesFragment"
         android:name="com.example.android_itis_2022.Fragments.ServicesFragment"
         android:label="fragment_services"
         tools:layout="@layout/fragment_services" >
         <action
-            android:id="@+id/action_servicesFragment2_to_mainFragment2"
-            app:destination="@id/mainFragment2" />
-        <action
-            android:id="@+id/action_servicesFragment2_to_messageFragment2"
-            app:destination="@id/messageFragment2" />
-        <action
-            android:id="@+id/action_servicesFragment2_to_videoFragment2"
-            app:destination="@id/videoFragment2" />
-        <action
-            android:id="@+id/action_servicesFragment2_to_clipsFragment"
-            app:destination="@id/clipsFragment" />
+            android:id="@+id/action_servicesFragment_to_nested_graph"
+            app:destination="@id/nested_graph" />
     </fragment>
     <fragment
-        android:id="@+id/videoFragment2"
+        android:id="@+id/videoFragment"
         android:name="com.example.android_itis_2022.Fragments.VideoFragment"
         android:label="fragment_video"
         tools:layout="@layout/fragment_video" >
-        <action
-            android:id="@+id/action_videoFragment2_to_mainFragment2"
-            app:destination="@id/mainFragment2" />
-        <action
-            android:id="@+id/action_videoFragment2_to_servicesFragment2"
-            app:destination="@id/servicesFragment2" />
-        <action
-            android:id="@+id/action_videoFragment2_to_messageFragment2"
-            app:destination="@id/messageFragment2" />
-        <action
-            android:id="@+id/action_videoFragment2_to_clipsFragment"
-            app:destination="@id/clipsFragment" />
     </fragment>
     <fragment
         android:id="@+id/clipsFragment"
         android:name="com.example.android_itis_2022.Fragments.ClipsFragment"
         android:label="fragment_clips"
         tools:layout="@layout/fragment_clips" >
-        <action
-            android:id="@+id/action_clipsFragment_to_mainFragment2"
-            app:destination="@id/mainFragment2" />
-        <action
-            android:id="@+id/action_clipsFragment_to_servicesFragment2"
-            app:destination="@id/servicesFragment2" />
-        <action
-            android:id="@+id/action_clipsFragment_to_videoFragment2"
-            app:destination="@id/videoFragment2" />
-        <action
-            android:id="@+id/action_clipsFragment_to_messageFragment2"
-            app:destination="@id/messageFragment2" />
     </fragment>
 </navigation>

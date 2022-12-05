@@ -2,9 +2,13 @@ package com.example.android_itis_2022
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.android_itis_2022.databinding.ActivityMainBinding
 
@@ -17,14 +21,31 @@ class MainActivity : AppCompatActivity() {
         binding= ActivityMainBinding.inflate(layoutInflater).also{
             setContentView(it.root)
         }
-        controller=(supportFragmentManager.findFragmentById(R.id.container) as NavHostController).navController
+        controller=(supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
 
         val appBarConfiguration = AppBarConfiguration(
-            topLevelDestinationIds = setOf(R.id.servicesFragment2),
+            topLevelDestinationIds = setOf(R.id.mainFragment),
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
-//        binding?.run {
-//            bnvMain.setupWithNavController(controller)
-//        }
+        findViewById<Toolbar>(androidx.appcompat.R.id.action_bar)
+            .setupWithNavController(controller, appBarConfiguration)
+
+        binding?.run {
+            bnvMain.setupWithNavController(controller)
+        }
+    }
+    override fun onBackPressed() {
+        binding?.run {
+            if(bnvMain.selectedItemId!=R.id.mainFragment) {
+                bnvMain.selectedItemId=R.id.mainFragment
+            } else{
+                super.onBackPressed()
+            }
+        }
+    }
+    private fun navigateTo(fragment:Fragment){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container,fragment,fragment.javaClass.name)
+            .commit()
     }
 }
