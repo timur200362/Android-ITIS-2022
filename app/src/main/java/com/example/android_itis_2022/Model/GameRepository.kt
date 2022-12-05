@@ -1,6 +1,5 @@
 package com.example.android_itis_2022.Model
 
-import com.example.android_itis_2022.Model.Game
 
 object GameRepository {
     val games= arrayListOf(

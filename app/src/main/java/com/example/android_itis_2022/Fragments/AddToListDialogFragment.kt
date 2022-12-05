@@ -12,7 +12,6 @@ import com.example.android_itis_2022.databinding.FragmentAddToListDialogBinding
 class AddToListDialogFragment : DialogFragment(R.layout.fragment_add_to_list_dialog){
     var add:((Int, Game)->Unit)?=null
 
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val title = "Dialog"
         val builder: AlertDialog.Builder = AlertDialog.Builder(activity)

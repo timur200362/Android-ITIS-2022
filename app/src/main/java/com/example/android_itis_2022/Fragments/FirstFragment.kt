@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.example.android_itis_2022.Adapter.GameListAdapter
 import com.example.android_itis_2022.Model.Game
 import com.example.android_itis_2022.Model.GameRepository
-import com.example.android_itis_2022.Model.MainItem
 import com.example.android_itis_2022.R
 import com.example.android_itis_2022.databinding.FragmentFirstBinding
 
@@ -20,21 +19,14 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-//        inflater.inflate(R.layout.fragment_first,container,false)
-//        binding=FragmentFirstBinding.inflate(inflater,container,false)
-//        return binding?.root
-
         return FragmentFirstBinding.inflate(inflater, container, false).let {
             binding = it
             it.root
         }
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val gameAdapter:GameAdapter= GameAdapter(GameRepository.games) {}
         binding = FragmentFirstBinding.bind(view)
         binding?.run {
             adapter = GameListAdapter(
@@ -67,7 +59,6 @@ class FirstFragment : Fragment() {
             }
         }
     }
-
     companion object {
         const val FirstFragment_TAG = "FirstFragment_TAG"
         fun getInstance(bundle: Bundle?): FirstFragment {
