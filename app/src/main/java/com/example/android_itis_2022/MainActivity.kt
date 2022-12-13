@@ -22,11 +22,5 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container,FirstFragment()).commit()
         }
-//        supportFragmentManager.beginTransaction()
-//            .replace(
-//                R.id.container,
-//                FirstFragment.getInstance(Bundle()),
-//                FirstFragment.FirstFragment_TAG)
-//            .commit()
     }
 }

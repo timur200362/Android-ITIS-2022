@@ -17,11 +17,6 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-//        inflater.inflate(R.layout.fragment_first,container,false)
-//        binding=FragmentFirstBinding.inflate(inflater,container,false)
-//        return binding?.root
-
         return FragmentFirstBinding.inflate(inflater,container,false).let{
             binding=it
             it.root
@@ -31,7 +26,6 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val gameAdapter:GameAdapter= GameAdapter(GameRepository.games) {}
         binding=FragmentFirstBinding.bind(view)
         binding?.run {
             adapter=GameAdapter(GameRepository.games,
