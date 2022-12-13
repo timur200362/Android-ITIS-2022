@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android_itis_2022.databinding.FragmentFirstBinding
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter
 
 class FirstFragment : Fragment() {
     private var binding: FragmentFirstBinding? = null
@@ -41,8 +42,13 @@ class FirstFragment : Fragment() {
                     .commit()
             }
             team.adapter=adapter
+            //Добавил анимацию списка. Знаю что нельзя использовать !!, но по-другому пока не думал как сделать
+            team.adapter=ScaleInAnimationAdapter(adapter!!).apply {
+                setDuration(350)
+                setFirstOnly(false)
             }
         }
+    }
     companion object {
         const val FirstFragment_TAG = "FirstFragment_TAG"
         fun getInstance(bundle: Bundle?): FirstFragment {
