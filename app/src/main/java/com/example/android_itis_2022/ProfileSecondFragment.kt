@@ -36,8 +36,8 @@ class ProfileSecondFragment : Fragment() {
                     colorValue=resources.getIntArray(R.array.colors_array).get(2)
                 }
             }
-            this!!.colorCounterValue.text = "$counterValue"
-            screenSecond.setBackgroundColor(colorValue)
+            this?.colorCounterValue?.text = "$counterValue"
+            this?.screenSecond?.setBackgroundColor(colorValue)
         }
     }
     companion object {

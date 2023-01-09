@@ -23,8 +23,4 @@
             android:inputType="number"
             android:maxLength="3" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
