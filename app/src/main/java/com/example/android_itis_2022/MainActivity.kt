@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
+import android.graphics.Color
 import android.media.AudioAttributes
 import android.media.RingtoneManager
 import android.net.Uri
@@ -64,8 +65,9 @@ class MainActivity : AppCompatActivity() {
 
         pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
 
-        alarmManager.setExact(
-            AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), pendingIntent
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
+            AlarmManager.INTERVAL_DAY,pendingIntent
         )
         Toast.makeText(this, "Alarm set Successfuly", Toast.LENGTH_SHORT).show()
     }
@@ -122,6 +124,7 @@ class MainActivity : AppCompatActivity() {
             channel.description = description
             channel.setSound(music,audioAttributes)
             channel.vibrationPattern=vibration
+            channel.lightColor = Color.GREEN
 
             val notificationManager = getSystemService(
                 NotificationManager::class.java
