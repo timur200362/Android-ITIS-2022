@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_itis_2022">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
     <application
@@ -15,10 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidITIS2022"
         tools:targetApi="31">
-        <activity
-            android:name=".SecondActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
