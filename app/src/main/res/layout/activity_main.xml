@@ -19,29 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="00.00.00"
-        android:textColor="@color/blue"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_time"
-        app:layout_constraintStart_toStartOf="@+id/tv_time"
-        app:layout_constraintTop_toBottomOf="@+id/tv_time" />
-
     <Button
         android:id="@+id/btn_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/grey"
         android:text="Stop"
         android:textColor="@color/blue"
         android:textSize="17dp"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_data"
+        app:layout_constraintEnd_toStartOf="@+id/tv_time"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -54,6 +42,6 @@
         android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_stop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_data" />
+        app:layout_constraintStart_toEndOf="@+id/tv_time" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

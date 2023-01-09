@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
             channel.description = description
             channel.setSound(music,audioAttributes)
             channel.vibrationPattern=vibration
-            channel.lightColor = Color.GREEN
+            channel.lightColor = Color.BLUE
 
             val notificationManager = getSystemService(
                 NotificationManager::class.java
