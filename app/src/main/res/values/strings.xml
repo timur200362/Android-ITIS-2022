@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android-ITIS-2022</string>
+    <string name="storage_permissions_not_granted">Go To Settings</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -3,16 +3,20 @@ package com.example.android_itis_2022
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.provider.Settings
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.android_itis_2022.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
     val getContent = registerForActivityResult(ResultActivityContract(this@MainActivity)) { bitmap: Bitmap? ->
@@ -20,7 +24,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var binding:ActivityMainBinding?=null
-    private val locationPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {}
+    private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            granted ->
+        if (granted)
+        {
+            getContent.launch("")
+        }
+        else
+        {
+            Toast.makeText(this@MainActivity,"Нужно разрешение!",Toast.LENGTH_LONG).show()
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,22 +60,37 @@ class MainActivity : AppCompatActivity() {
                         this@MainActivity,
                         android.Manifest.permission.CAMERA
                     ) -> {
-                        Toast.makeText(this@MainActivity, "required permission", Toast.LENGTH_LONG)
-                            .show()
-                        locationPermissionLauncher.launch(
-                            android.Manifest.permission.CAMERA
-                        )
-                        getContent.launch(chooserIntent.toString())
+                        showPermsOnSetting()
                     }
                     else -> {
-                        locationPermissionLauncher.launch(
+                        permissionLauncher.launch(
                             android.Manifest.permission.CAMERA
                         )
-                        getContent.launch(chooserIntent.toString())
                     }
                 }
-                //getContent.launch("")
             }
         }
     }
+    fun showPermsOnSetting() {
+        binding?.root?.let {
+            Snackbar.make(
+                it,
+                getString(R.string.storage_permissions_not_granted),
+                Snackbar.LENGTH_LONG
+            )
+                .setAction(
+                    getString(R.string.settings).uppercase(Locale.getDefault())
+                ) { v: View? -> openApplicationSettings() }
+                .show()
+        }
+    }
+
+    private fun openApplicationSettings() {
+        val appSettingsIntent = Intent(
+            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+            Uri.parse("package:" + this.getPackageName())
+        )
+        startActivityForResult(appSettingsIntent, 1)
+    }
+
 }
