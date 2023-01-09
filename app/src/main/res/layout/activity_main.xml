@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circle1" />
+
     <View
         android:id="@+id/circle1"
         android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/circle2"
         android:layout_width="wrap_content"
@@ -66,10 +68,10 @@
         app:layout_constraintTop_toTopOf="@+id/view6" />
 
     <ImageView
-        android:layout_marginLeft="10dp"
         android:id="@+id/photo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:src="@drawable/ic_baseline_add_photo_alternate_2"
         app:layout_constraintBottom_toBottomOf="@+id/view6"
         app:layout_constraintStart_toEndOf="@+id/camera2"
@@ -87,21 +89,21 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView2"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
         android:scaleType="centerCrop"
         android:src="@drawable/profile_picture"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <ImageView
         android:id="@+id/arrowBack"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -140,9 +142,9 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="275dp"
         android:text="Тимур Аскаров"
-        android:layout_marginTop="50dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nickname"
@@ -174,6 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
     <TextView
         android:id="@+id/textbutton"
         android:layout_width="wrap_content"
@@ -189,8 +192,8 @@
         android:id="@+id/camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_photo_camera_24"
         android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_photo_camera_24"
         app:layout_constraintEnd_toEndOf="@+id/cameratext"
         app:layout_constraintStart_toStartOf="@+id/cameratext"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -199,8 +202,8 @@
         android:id="@+id/cameratext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="История"
         android:layout_marginLeft="5dp"
+        android:text="История"
         android:textColor="@color/blue2"
         app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/camera" />
@@ -218,8 +221,8 @@
         android:id="@+id/recordtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Запись"
         android:layout_marginLeft="45dp"
+        android:text="Запись"
         android:textColor="@color/blue2"
         app:layout_constraintStart_toEndOf="@+id/cameratext"
         app:layout_constraintTop_toBottomOf="@+id/record" />
@@ -237,8 +240,8 @@
         android:id="@+id/phototext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Фото"
         android:layout_marginLeft="45dp"
+        android:text="Фото"
         android:textColor="@color/blue2"
         app:layout_constraintStart_toEndOf="@+id/recordtext"
         app:layout_constraintTop_toBottomOf="@+id/photo" />
@@ -256,8 +259,8 @@
         android:id="@+id/cliptext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Клип"
         android:layout_marginLeft="45dp"
+        android:text="Клип"
         android:textColor="@color/blue2"
         app:layout_constraintStart_toEndOf="@+id/phototext"
         app:layout_constraintTop_toBottomOf="@+id/clip" />
@@ -294,8 +297,8 @@
         android:id="@+id/homepicturetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Город: Казань"
         android:layout_marginLeft="10dp"
+        android:text="Город: Казань"
         app:layout_constraintBottom_toBottomOf="@+id/homepicture"
         app:layout_constraintStart_toEndOf="@+id/homepicture"
         app:layout_constraintTop_toTopOf="@+id/homepicture" />
@@ -304,8 +307,8 @@
         android:id="@+id/wifi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_wifi_24"
         android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_wifi_24"
         app:layout_constraintStart_toStartOf="@id/homepicture"
         app:layout_constraintTop_toBottomOf="@+id/homepicture" />
 
@@ -313,8 +316,8 @@
         android:id="@+id/wifitext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="110 подписчиков"
         android:layout_marginLeft="10dp"
+        android:text="110 подписчиков"
         app:layout_constraintBottom_toBottomOf="@+id/wifi"
         app:layout_constraintStart_toEndOf="@+id/wifi"
         app:layout_constraintTop_toTopOf="@+id/wifi" />
@@ -323,8 +326,8 @@
         android:id="@+id/school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_school_24"
         android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_school_24"
         app:layout_constraintStart_toStartOf="@id/wifi"
         app:layout_constraintTop_toBottomOf="@+id/wifi" />
 
@@ -352,8 +355,8 @@
         android:id="@+id/jobtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Указать место работы"
         android:layout_marginLeft="10dp"
+        android:text="Указать место работы"
         android:textColor="@color/blue1"
         app:layout_constraintBottom_toBottomOf="@+id/job"
         app:layout_constraintStart_toEndOf="@+id/job"
@@ -381,8 +384,8 @@
         android:id="@+id/linktext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ссылка на профиль"
         android:layout_marginLeft="10dp"
+        android:text="Ссылка на профиль"
         android:textColor="@color/blue1"
         app:layout_constraintBottom_toBottomOf="@+id/link"
         app:layout_constraintStart_toEndOf="@+id/link"
@@ -392,16 +395,16 @@
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_error_24"
         android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_error_24"
         app:layout_constraintStart_toStartOf="@id/link"
         app:layout_constraintTop_toBottomOf="@+id/link" />
 
     <TextView
         android:id="@+id/errortext"
         android:layout_width="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:text="Подробная информация"
         android:textColor="@color/blue2"
         app:layout_constraintBottom_toBottomOf="@+id/error"
@@ -431,21 +434,21 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/gleb"
         android:layout_width="50dp"
-        android:src="@drawable/glebushek"
         android:layout_height="50dp"
-        app:shapeAppearanceOverlay="@style/circle"
         android:scaleType="centerCrop"
+        android:src="@drawable/glebushek"
         app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <TextView
         android:id="@+id/glebtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Глеб"
+        app:layout_constraintEnd_toEndOf="@+id/gleb"
         app:layout_constraintStart_toStartOf="@+id/gleb"
-        app:layout_constraintTop_toBottomOf="@+id/gleb"
-        app:layout_constraintEnd_toEndOf="@+id/gleb"/>
+        app:layout_constraintTop_toBottomOf="@+id/gleb" />
 
     <TextView
         android:id="@+id/glebtext2"
@@ -545,60 +548,61 @@
         app:layout_constraintEnd_toEndOf="@+id/amirtext"
         app:layout_constraintStart_toStartOf="@+id/amirtext"
         app:layout_constraintTop_toBottomOf="@+id/amirtext" />
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/bulat"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="18dp"
-        android:src="@drawable/bulat"
-        app:shapeAppearanceOverlay="@style/circle"
         android:scaleType="centerCrop"
+        android:src="@drawable/bulat"
         app:layout_constraintStart_toEndOf="@+id/gleb"
-        app:layout_constraintTop_toTopOf="@+id/gleb" />
+        app:layout_constraintTop_toTopOf="@+id/gleb"
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ramil"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_marginLeft="18dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ramil"
         app:layout_constraintStart_toEndOf="@+id/bulat"
         app:layout_constraintTop_toTopOf="@+id/bulat"
-        android:layout_marginLeft="18dp"/>
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/roma"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_marginLeft="18dp"
         android:scaleType="centerCrop"
         android:src="@drawable/roma"
         app:layout_constraintStart_toEndOf="@+id/ramil"
         app:layout_constraintTop_toTopOf="@+id/ramil"
-        android:layout_marginLeft="18dp"/>
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/elina"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/elina"
-        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_marginLeft="18dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/elina"
         app:layout_constraintStart_toEndOf="@+id/roma"
         app:layout_constraintTop_toTopOf="@+id/roma"
-        android:layout_marginLeft="18dp"/>
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/amir"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:shapeAppearanceOverlay="@style/circle"
+        android:layout_marginLeft="18dp"
         android:scaleType="centerCrop"
         android:src="@drawable/amir"
         app:layout_constraintStart_toEndOf="@+id/elina"
         app:layout_constraintTop_toTopOf="@+id/elina"
-        android:layout_marginLeft="18dp"/>
+        app:shapeAppearanceOverlay="@style/circle" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -720,8 +724,8 @@
         android:id="@+id/datasettext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сервисы"
         android:layout_marginLeft="27dp"
+        android:text="Сервисы"
         app:layout_constraintStart_toEndOf="@+id/hometext"
         app:layout_constraintTop_toBottomOf="@+id/dataset1" />
 
@@ -756,8 +760,8 @@
         android:id="@+id/duotext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Клипы"
         android:layout_marginLeft="27dp"
+        android:text="Клипы"
         app:layout_constraintStart_toEndOf="@+id/messagetext"
         app:layout_constraintTop_toBottomOf="@+id/duo" />
 

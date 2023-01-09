@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding=ActivityMainBinding.inflate(layoutInflater).also{
             setContentView(it.root)
         }
-        val binding=binding!!
-        with(binding)
-        {
+        //val binding=binding!!
+        //with(binding)
+        binding?.run {
             button.setOnClickListener{
                 imageView2.visibility=if (imageView2.visibility==View.GONE){
                     View.VISIBLE
