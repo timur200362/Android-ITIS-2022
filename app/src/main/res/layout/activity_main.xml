@@ -6,13 +6,781 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <View
+        android:id="@+id/view5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="25dp"
+        android:background="@color/grey3"
+        app:layout_constraintBottom_toTopOf="@id/circle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle1" />
+
+    <View
+        android:id="@+id/circle1"
+        android:layout_width="wrap_content"
+        android:layout_height="680dp"
+        android:background="@drawable/circle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/circle2"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+
+        app:layout_constraintStart_toStartOf="@+id/photon1"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <ImageView
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_create_24"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toStartOf="@+id/createtext"
+        app:layout_constraintStart_toStartOf="@+id/view6"
+        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+    <TextView
+        android:id="@+id/createtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Создать запись"
+        android:textColor="@color/blue2"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toEndOf="@+id/view6"
+        app:layout_constraintStart_toStartOf="@+id/view6"
+        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+    <ImageView
+        android:id="@+id/photo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_baseline_add_photo_alternate_2"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintStart_toEndOf="@+id/camera2"
+        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+    <ImageView
+        android:id="@+id/camera2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_baseline_photo_camera_2"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintStart_toEndOf="@+id/view6"
+        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <ImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_qr_code_24"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/graph" />
+
+    <ImageView
+        android:id="@+id/graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/ic_baseline_trending_up_24"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/qr"
+        app:layout_constraintTop_toTopOf="@id/nickname" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="taskarov0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/arrowBack"
+        app:layout_constraintTop_toTopOf="@id/arrowBack" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="275dp"
+        android:text="Тимур Аскаров"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nickname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Установить статус"
+        android:textColor="@color/blue1"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="online"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/circle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Редактировать"
+        android:textColor="@color/blue2"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:layout_constraintEnd_toEndOf="@+id/cameratext"
+        app:layout_constraintStart_toStartOf="@+id/cameratext"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/cameratext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="История"
+        android:textColor="@color/blue2"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/camera" />
+
+    <ImageView
+        android:id="@+id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_border_color_24"
+        app:layout_constraintEnd_toEndOf="@+id/recordtext"
+        app:layout_constraintStart_toStartOf="@+id/recordtext"
+        app:layout_constraintTop_toTopOf="@+id/camera" />
+
+    <TextView
+        android:id="@+id/recordtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:text="Запись"
+        android:textColor="@color/blue2"
+        app:layout_constraintStart_toEndOf="@+id/cameratext"
+        app:layout_constraintTop_toBottomOf="@+id/record" />
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_photo_alternate_24"
+        app:layout_constraintEnd_toEndOf="@+id/phototext"
+        app:layout_constraintStart_toStartOf="@+id/phototext"
+        app:layout_constraintTop_toTopOf="@+id/record" />
+
+    <TextView
+        android:id="@+id/phototext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:text="Фото"
+        android:textColor="@color/blue2"
+        app:layout_constraintStart_toEndOf="@+id/recordtext"
+        app:layout_constraintTop_toBottomOf="@+id/photo" />
+
+    <ImageView
+        android:id="@+id/clip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_duo_24"
+        app:layout_constraintEnd_toEndOf="@+id/cliptext"
+        app:layout_constraintStart_toStartOf="@+id/cliptext"
+        app:layout_constraintTop_toTopOf="@+id/photo" />
+
+    <TextView
+        android:id="@+id/cliptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:text="Клип"
+        android:textColor="@color/blue2"
+        app:layout_constraintStart_toEndOf="@+id/phototext"
+        app:layout_constraintTop_toBottomOf="@+id/clip" />
+
+    <ImageView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_help_24"
+        app:layout_constraintEnd_toEndOf="@+id/helptext"
+        app:layout_constraintStart_toStartOf="@+id/helptext"
+        app:layout_constraintTop_toTopOf="@+id/clip" />
+
+    <TextView
+        android:id="@+id/helptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="Вопрос"
+        android:textColor="@color/blue2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help" />
+
+    <ImageView
+        android:id="@+id/homepicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintStart_toStartOf="@+id/cameratext"
+        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/homepicturetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Город: Казань"
+        app:layout_constraintBottom_toBottomOf="@+id/homepicture"
+        app:layout_constraintStart_toEndOf="@+id/homepicture"
+        app:layout_constraintTop_toTopOf="@+id/homepicture" />
+
+    <ImageView
+        android:id="@+id/wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_wifi_24"
+        app:layout_constraintStart_toStartOf="@id/homepicture"
+        app:layout_constraintTop_toBottomOf="@+id/homepicture" />
+
+    <TextView
+        android:id="@+id/wifitext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="110 подписчиков"
+        app:layout_constraintBottom_toBottomOf="@+id/wifi"
+        app:layout_constraintStart_toEndOf="@+id/wifi"
+        app:layout_constraintTop_toTopOf="@+id/wifi" />
+
+    <ImageView
+        android:id="@+id/school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_school_24"
+        app:layout_constraintStart_toStartOf="@id/wifi"
+        app:layout_constraintTop_toBottomOf="@+id/wifi" />
+
+    <TextView
+        android:id="@+id/schooltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Указать место учёбы"
+        android:textColor="@color/blue1"
+        app:layout_constraintBottom_toBottomOf="@+id/school"
+        app:layout_constraintStart_toEndOf="@+id/school"
+        app:layout_constraintTop_toTopOf="@+id/school" />
+
+    <ImageView
+        android:id="@+id/job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_business_center_24"
+        app:layout_constraintStart_toStartOf="@id/school"
+        app:layout_constraintTop_toBottomOf="@+id/school" />
+
+    <TextView
+        android:id="@+id/jobtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Указать место работы"
+        android:textColor="@color/blue1"
+        app:layout_constraintBottom_toBottomOf="@+id/job"
+        app:layout_constraintStart_toEndOf="@+id/job"
+        app:layout_constraintTop_toTopOf="@+id/job" />
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_navigate_next_24"
+        app:layout_constraintBottom_toBottomOf="@+id/linktext"
+        app:layout_constraintStart_toEndOf="@+id/linktext"
+        app:layout_constraintTop_toTopOf="@+id/linktext" />
+
+    <ImageView
+        android:id="@+id/link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_link_24"
+        app:layout_constraintStart_toStartOf="@id/job"
+        app:layout_constraintTop_toBottomOf="@+id/job" />
+
+    <TextView
+        android:id="@+id/linktext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Ссылка на профиль"
+        android:textColor="@color/blue1"
+        app:layout_constraintBottom_toBottomOf="@+id/link"
+        app:layout_constraintStart_toEndOf="@+id/link"
+        app:layout_constraintTop_toTopOf="@+id/link" />
+
+    <ImageView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_error_24"
+        app:layout_constraintStart_toStartOf="@id/link"
+        app:layout_constraintTop_toBottomOf="@+id/link" />
+
+    <TextView
+        android:id="@+id/errortext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Подробная информация"
+        android:textColor="@color/blue2"
+        app:layout_constraintBottom_toBottomOf="@+id/error"
+        app:layout_constraintStart_toEndOf="@+id/error"
+        app:layout_constraintTop_toTopOf="@+id/error" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="ДРУЗЬЯ"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/error"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="300"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/gleb"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/glebushek"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <TextView
+        android:id="@+id/glebtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Глеб"
+        app:layout_constraintEnd_toEndOf="@+id/gleb"
+        app:layout_constraintStart_toStartOf="@+id/gleb"
+        app:layout_constraintTop_toBottomOf="@+id/gleb" />
+
+    <TextView
+        android:id="@+id/glebtext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Гафеев"
+        app:layout_constraintEnd_toEndOf="@+id/glebtext"
+        app:layout_constraintStart_toStartOf="@+id/glebtext"
+        app:layout_constraintTop_toBottomOf="@+id/glebtext" />
+
+    <TextView
+        android:id="@+id/bulattext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Булат"
+        app:layout_constraintEnd_toEndOf="@+id/bulat"
+        app:layout_constraintStart_toStartOf="@+id/bulat"
+        app:layout_constraintTop_toBottomOf="@+id/bulat" />
+
+    <TextView
+        android:id="@+id/bulattext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Нагимов"
+        app:layout_constraintEnd_toEndOf="@+id/bulattext"
+        app:layout_constraintStart_toStartOf="@+id/bulattext"
+        app:layout_constraintTop_toBottomOf="@+id/bulattext" />
+
+    <TextView
+        android:id="@+id/ramiltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рамиль"
+        app:layout_constraintEnd_toEndOf="@+id/ramil"
+        app:layout_constraintStart_toStartOf="@+id/ramil"
+        app:layout_constraintTop_toBottomOf="@+id/ramil" />
+
+    <TextView
+        android:id="@+id/ramiltext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фахеров"
+        app:layout_constraintEnd_toEndOf="@+id/ramil"
+        app:layout_constraintStart_toStartOf="@+id/ramiltext"
+        app:layout_constraintTop_toBottomOf="@+id/ramiltext" />
+
+    <TextView
+        android:id="@+id/romatext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Роман"
+        app:layout_constraintEnd_toEndOf="@+id/roma"
+        app:layout_constraintStart_toStartOf="@+id/roma"
+        app:layout_constraintTop_toBottomOf="@+id/roma" />
+
+    <TextView
+        android:id="@+id/romatext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Егоров"
+        app:layout_constraintEnd_toEndOf="@+id/romatext"
+        app:layout_constraintStart_toStartOf="@+id/romatext"
+        app:layout_constraintTop_toBottomOf="@+id/romatext" />
+
+    <TextView
+        android:id="@+id/elinatext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Элина"
+        app:layout_constraintEnd_toEndOf="@+id/elina"
+        app:layout_constraintStart_toStartOf="@+id/elina"
+        app:layout_constraintTop_toBottomOf="@+id/elina" />
+
+    <TextView
+        android:id="@+id/elinatext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Абдрахм."
+        app:layout_constraintEnd_toEndOf="@+id/elinatext"
+        app:layout_constraintStart_toStartOf="@+id/elinatext"
+        app:layout_constraintTop_toBottomOf="@+id/elinatext" />
+
+    <TextView
+        android:id="@+id/amirtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Амир"
+        app:layout_constraintEnd_toEndOf="@+id/amir"
+        app:layout_constraintStart_toStartOf="@+id/amir"
+        app:layout_constraintTop_toBottomOf="@+id/amir" />
+
+    <TextView
+        android:id="@+id/amirtext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Фаизов"
+        app:layout_constraintEnd_toEndOf="@+id/amirtext"
+        app:layout_constraintStart_toStartOf="@+id/amirtext"
+        app:layout_constraintTop_toBottomOf="@+id/amirtext" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/bulat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bulat"
+        app:layout_constraintStart_toEndOf="@+id/gleb"
+        app:layout_constraintTop_toTopOf="@+id/gleb"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ramil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ramil"
+        app:layout_constraintStart_toEndOf="@+id/bulat"
+        app:layout_constraintTop_toTopOf="@+id/bulat"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roma"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/roma"
+        app:layout_constraintStart_toEndOf="@+id/ramil"
+        app:layout_constraintTop_toTopOf="@+id/ramil"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/elina"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/elina"
+        app:layout_constraintStart_toEndOf="@+id/roma"
+        app:layout_constraintTop_toTopOf="@+id/roma"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/amir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="18dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/amir"
+        app:layout_constraintStart_toEndOf="@+id/elina"
+        app:layout_constraintTop_toTopOf="@+id/elina"
+        app:shapeAppearanceOverlay="@style/circle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_chevron_right_24"
+        app:layout_constraintBottom_toTopOf="@+id/amir"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ФОТОГРАФИИ"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/gleb"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="2"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/photon1"
+        android:layout_width="178dp"
+        android:layout_height="79dp"
+        android:src="@drawable/photo1"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/photon2"
+        android:layout_width="183dp"
+        android:layout_height="79dp"
+        android:src="@drawable/photo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="3px"
+        android:background="@color/grey2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrowBack" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="3px"
+        android:background="@color/grey2"
+        app:layout_constraintBottom_toTopOf="@+id/school"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="3px"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/errortext" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="3px"
+        android:background="@color/grey2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glebtext2" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/photon1" />
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_home_2"
+        app:layout_constraintEnd_toEndOf="@+id/hometext"
+        app:layout_constraintStart_toStartOf="@+id/hometext"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/hometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Главная"
+        app:layout_constraintStart_toStartOf="@+id/photon1"
+        app:layout_constraintTop_toBottomOf="@+id/home" />
+
+    <ImageView
+        android:id="@+id/dataset1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_dataset_24"
+        app:layout_constraintEnd_toEndOf="@+id/datasettext"
+        app:layout_constraintStart_toStartOf="@+id/datasettext"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/datasettext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:text="Сервисы"
+        app:layout_constraintStart_toEndOf="@+id/hometext"
+        app:layout_constraintTop_toBottomOf="@+id/dataset1" />
+
+    <ImageView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_message_24"
+        app:layout_constraintEnd_toEndOf="@+id/messagetext"
+        app:layout_constraintStart_toStartOf="@+id/messagetext"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/messagetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:text="Мессенджер"
+        app:layout_constraintStart_toEndOf="@+id/datasettext"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+    <ImageView
+        android:id="@+id/duo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_duo_2"
+        app:layout_constraintEnd_toEndOf="@+id/duotext"
+        app:layout_constraintStart_toStartOf="@+id/duotext"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/duotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:text="Клипы"
+        app:layout_constraintStart_toEndOf="@+id/messagetext"
+        app:layout_constraintTop_toBottomOf="@+id/duo" />
+
+    <ImageView
+        android:id="@+id/videolibrary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_video_library_24"
+        app:layout_constraintEnd_toEndOf="@+id/videolibrarytext"
+        app:layout_constraintStart_toStartOf="@+id/videolibrarytext"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/videolibrarytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:text="Видео"
+        app:layout_constraintEnd_toEndOf="@+id/amir"
+        app:layout_constraintStart_toEndOf="@+id/duotext"
+        app:layout_constraintTop_toBottomOf="@+id/videolibrary" />
 </androidx.constraintlayout.widget.ConstraintLayout>
