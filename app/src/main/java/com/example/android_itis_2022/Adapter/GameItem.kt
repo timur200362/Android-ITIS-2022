@@ -8,44 +8,45 @@ import com.example.android_itis_2022.Model.Game
 import com.example.android_itis_2022.databinding.ItemGameBinding
 
 class GameItem(
-    private val actionDelete:(Game)->Unit,
-    private val binding:ItemGameBinding,
+    private val actionDelete: (Game) -> Unit,
+    private val binding: ItemGameBinding,
     private val glide: RequestManager,
     private val action: (Game) -> Unit
-): RecyclerView.ViewHolder(binding.root) {
-    fun onBind(game: Game){
-        with(binding){
-            tvGameName.text=game.name
+) : RecyclerView.ViewHolder(binding.root) {
+    fun onBind(game: Game) {
+        with(binding) {
+            tvGameName.text = game.name
 
             glide
                 .load(game.cover)
                 .into(ivGamePhoto)
 
-            root.setOnClickListener{
+            root.setOnClickListener {
                 action(game)
             }
-            deleteGame.setOnClickListener{
+            deleteGame.setOnClickListener {
                 actionDelete(game)
             }
         }
     }
-    companion object{
-        const val ARG_NAME="arg_name"
+
+    companion object {
+        const val ARG_NAME = "arg_name"
 
         fun create(
-            parent:ViewGroup,
-            glide:RequestManager,
+            parent: ViewGroup,
+            glide: RequestManager,
             action: (Game) -> Unit,
             actionDelete: (Game) -> Unit
-        ):GameItem= GameItem(
+        ): GameItem = GameItem(
             binding = ItemGameBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             ),
-            glide =glide,
-            action =action,
-            actionDelete =actionDelete
+            glide = glide,
+            action = action,
+            actionDelete = actionDelete
         )
     }
 }

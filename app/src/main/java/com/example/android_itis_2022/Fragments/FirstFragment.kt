@@ -33,7 +33,6 @@ class FirstFragment : Fragment() {
                 actionDelete = {
                     GameRepository.games.remove(it)
                     adapter?.submitList(GameRepository.games)
-                    adapter?.notifyDataSetChanged()
                 },
                 glide = Glide.with(this@FirstFragment),
                 action = {
